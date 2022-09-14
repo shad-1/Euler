@@ -1,8 +1,12 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
+	start := time.Now()
 	largestCollatz := 0
 	largestCollatzNumber := 0
 
@@ -24,5 +28,7 @@ func main() {
 			largestCollatzNumber = n
 		}
 	}
+	elapsed := time.Since(start)
 	fmt.Println(largestCollatzNumber, largestCollatz)
+	fmt.Println("Time taken:", elapsed)
 }
